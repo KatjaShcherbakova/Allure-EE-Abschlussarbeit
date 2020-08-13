@@ -11,7 +11,7 @@ import static autotests.helpers.Environment.baseUrl;
 import static io.qameta.allure.Allure.link;
 import static io.qameta.allure.Allure.parameter;
 
-public class GithubBaseSteps {
+public class GithubWebSteps {
 
     @Step("Open main page")
     public void openMainPage(String url) {
@@ -44,13 +44,27 @@ public class GithubBaseSteps {
     public void checkExistenceOfIssue (int issue) {
         parameter("ISSUE: ", issue);
 
-        $(withText("#" + issue)).shouldNotBe(visible);
+        $(withText("#" + issue)).shouldBe(visible);
     }
 
     @Step("Check for a issue with a specific number does not exists")
-    public void checkUnexistenceOfIssue (int issue) {
-        parameter("ISSUE: ", issue);
+    public void checkExistenceOfIssueNumber(int issue_number) {
+        parameter("ISSUE: ", issue_number);
 
-        $(withText("#" + issue)).shouldNotBe(visible);
+        $(withText("#" + issue_number)).shouldNotBe(visible);
+    }
+
+    @Step("Check for a issue with a specific number does not exists")
+    public void checkUnexistenceOfIssueNumber(int issue_number) {
+        parameter("ISSUE: ", issue_number);
+
+        $(withText("#" + issue_number)).shouldNotBe(visible);
+    }
+
+    @Step("Check for a issue with a specific name exists")
+    public void checkExistenceOfIssueName(String issue_name) {
+        parameter("NAME OF ISSUE: ", issue_name);
+
+        $(withText("#" + issue_name)).shouldNotBe(visible);
     }
 }

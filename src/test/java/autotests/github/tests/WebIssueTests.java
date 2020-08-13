@@ -1,7 +1,7 @@
 package autotests.github.tests;
 
 import autotests.TestBase;
-import autotests.base.steps.GithubBaseSteps;
+import autotests.base.steps.GithubWebSteps;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
@@ -19,9 +19,9 @@ import static io.qameta.allure.Allure.*;
 @Owner("shcherbakova")
 @Feature("ISSUE")
 @Tag("issue")
-public class IssueTests extends TestBase {
+public class WebIssueTests extends TestBase {
 
-    private final GithubBaseSteps steps = new GithubBaseSteps();
+    private final GithubWebSteps steps = new GithubWebSteps();
     private static final int issueNumber = 1;
 
     @Test
@@ -59,6 +59,6 @@ public class IssueTests extends TestBase {
         steps.searchForRepositiry(repository);
         steps.clickLinkOfRepository(repository);
         steps.openIssuePage();
-        steps.checkExistenceOfIssue(incorrecIssueNumber);
+        steps.checkUnexistenceOfIssueNumber(incorrecIssueNumber);
     }
 }

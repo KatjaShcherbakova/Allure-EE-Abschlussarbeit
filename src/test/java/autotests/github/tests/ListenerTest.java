@@ -1,6 +1,7 @@
 package autotests.github.tests;
 
 import autotests.TestBase;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,7 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+@Feature("Listener")
 @Tag("issue")
 public class ListenerTest extends TestBase {
 
