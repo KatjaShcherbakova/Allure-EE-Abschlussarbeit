@@ -5,7 +5,6 @@ public class Environment {
             baseUrl = System.getProperty("BASE_URL","https://github.com"),
             repository = System.getProperty("REPOSITORY","KatjaShcherbakova/Autotests-examples");
      public static int
-            correctIssueNumber = System.getProperty("CORRECT_ISSUE", 1),
-            incorrecIssueNumber = System.getProperty("INCORRECT_ISSUE", 3),
-    ;
+            correctIssueNumber = 1,
+            incorrecIssueNumber = 3;
 }
