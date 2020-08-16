@@ -14,6 +14,7 @@ import java.io.IOException;
 
 import static autotests.helpers.Environment.fileUrl;
 import static com.codeborne.selenide.Selenide.$;
+import static io.qameta.allure.Allure.parameter;
 import static io.qameta.allure.Allure.step;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -31,6 +32,8 @@ public class FilesTests extends TestBase {
     @Test
     @DisplayName("Positive test: download the PDF file and search for an expected text in it")
     public void filePDFShouldContainExpectedText() throws IOException {
+        parameter("EXPECTED TEXT: ",expectedFileText);
+
         steps.openPage(fileUrl);
 
         step("Download PDF file and check that the downloaded file contains the expected text", () -> {

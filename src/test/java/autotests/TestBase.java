@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 import static autotests.helpers.DriverHelper.*;
 import static autotests.helpers.Environment.isVideoOn;
-import static helpers.AttachmentsHelper.*;
+import static autotests.helpers.AttachmentsHelper.*;
 
 
 public class TestBase {
