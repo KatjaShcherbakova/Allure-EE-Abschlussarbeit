@@ -16,6 +16,10 @@ public class Environment {
             remoteDriverUrl = System.getProperty("remote_driver_url",""),
             videoStorageUrl = System.getProperty("video_storage_url","");
 
+    public static boolean
+            isRemoteDriver = remoteDriverUrl != null,
+            isVideoOn = videoStorageUrl != null;
+
      public static int
             correctIssueNumber = 1,
             incorrectIssueNumber = 121457;
