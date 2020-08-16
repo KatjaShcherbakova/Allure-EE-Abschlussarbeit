@@ -15,6 +15,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 @Feature("Listener")
 @Tag("issue")
+@Tag ("github")
 public class ListenerTest extends TestBase {
 
     @Test

@@ -6,6 +6,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
+import static autotests.helpers.AttachmentsHelper.*;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
@@ -21,6 +22,10 @@ public class TestBase {
 
     @AfterEach
     public void afterEach() {
+        attachScreenshot("Last screenshot");
+        attachPageSource();
+        attachBrowserConsoleLogs();
+        attachVideo();
         closeWebDriver();
     }
 

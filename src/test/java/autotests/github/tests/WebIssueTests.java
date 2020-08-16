@@ -11,18 +11,18 @@ import org.openqa.selenium.By;
 
 import static autotests.helpers.Environment.*;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.withText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.*;
 
 @Owner("shcherbakova")
 @Feature("ISSUE")
+@Tag("github")
 @Tag("issue")
+@Tag("web")
 public class WebIssueTests extends TestBase {
-
     private final GithubWebSteps steps = new GithubWebSteps();
-    private static final int issueNumber = 1;
+
 
     @Test
     @DisplayName("Positive test, user should be able to find issue by a specific number")
@@ -55,10 +55,26 @@ public class WebIssueTests extends TestBase {
     @DisplayName("Negative test, user should not be able to find issue by uncorrect number")
     public void shouldNotFindIssueByNumber() {
 
-        steps.openMainPage(baseUrl);
+        steps.openPage(baseUrl);
         steps.searchForRepositiry(repository);
         steps.clickLinkOfRepository(repository);
         steps.openIssuePage();
-        steps.checkUnexistenceOfIssueNumber(incorrecIssueNumber);
+        steps.issueNumberShouldNotExist(incorrectIssueNumber);
     }
+
+    @Test
+    @DisplayName("Positive test: Creat a issue by WEB")
+    public void creatIssuebyWeb() {
+        String issue_title = "Test issue";
+
+        steps.openPage(baseUrl);
+        steps.clickSignIn();
+        steps.inputUsernamePassword(usernameGithub, passwordGithub);
+        steps.clickLinkOfRepository(repository);
+        steps.openIssuePage();
+        steps.createIssue(issue_title);
+        steps.openIssuePage();
+        steps.issueNameShouldExist(issue_title);
+    }
+
 }

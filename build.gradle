@@ -41,7 +41,8 @@ dependencies {
     compile ("io.qameta.allure:allure-java-commons:2.13.5")
     compile ("io.qameta.allure:allure-selenide:2.13.5")
     compile ("io.qameta.allure:allure-rest-assured:2.13.5")
-    //    compile ("io.qameta.allure:allure-junit5:$LATEST_VERSION")
+
+    compile ("com.codeborne:pdf-test:1.5.1")
 
     compile ("com.fasterxml.jackson.core:jackson-databind:2.11.2")
 }
@@ -49,5 +50,23 @@ dependencies {
 task issue_tests(type: Test ) {
     useJUnitPlatform {
         includeTags 'issue'
+    }
+}
+
+task github_tests(type: Test ) {
+    useJUnitPlatform {
+        includeTags 'github'
+    }
+}
+
+task auth_tests(type: Test ) {
+    useJUnitPlatform {
+        includeTags 'auth'
+    }
+}
+
+task file_tests(type: Test ) {
+    useJUnitPlatform {
+        includeTags 'file'
     }
 }

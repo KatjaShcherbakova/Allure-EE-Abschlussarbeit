@@ -18,6 +18,7 @@
 *.tar.gz
 *.rar
 *.iml
+*.txt
 
 # Project gen files
 .idea
