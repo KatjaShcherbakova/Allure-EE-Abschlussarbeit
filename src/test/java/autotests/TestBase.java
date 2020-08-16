@@ -1,5 +1,6 @@
 package autotests;
 
+import autotests.drivers.CustomWebDriver;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -18,6 +19,7 @@ public class TestBase {
                 .screenshots(true));
         Configuration.timeout = 10000;
         Configuration.startMaximized =true;
+        Configuration.browser = CustomWebDriver.class.getName();
     }
 
     @AfterEach
