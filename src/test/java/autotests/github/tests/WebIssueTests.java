@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.*;
 
 @Owner("shcherbakova")
-@Feature("ISSUE")
+@Feature("Work with issues by WEB")
 @Tag("github")
 @Tag("issue")
 @Tag("web")

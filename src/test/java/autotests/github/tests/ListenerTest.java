@@ -19,7 +19,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class ListenerTest extends TestBase {
 
     @Test
-    @DisplayName("Issue test without steps")
+    @DisplayName("Issue test without steps but with Listener ")
     public void IssueTestWithListener() {
        open(baseUrl);
        $(".header-search-input").click();

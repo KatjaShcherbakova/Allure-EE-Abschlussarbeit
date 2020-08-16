@@ -34,6 +34,7 @@ public class FilesTests extends TestBase {
     public void filePDFShouldContainExpectedText() throws IOException {
         parameter("EXPECTED TEXT: ",expectedFileText);
 
+
         steps.openPage(fileUrl);
 
         step("Download PDF file and check that the downloaded file contains the expected text", () -> {

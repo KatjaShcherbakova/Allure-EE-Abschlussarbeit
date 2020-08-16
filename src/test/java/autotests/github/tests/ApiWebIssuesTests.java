@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static autotests.helpers.Environment.*;
+import static io.qameta.allure.Allure.parameter;
 import static io.qameta.allure.Allure.step;
 
 @Owner("shcherbakova")
