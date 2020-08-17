@@ -47,6 +47,23 @@ dependencies {
     compile ("com.fasterxml.jackson.core:jackson-databind:2.11.2")
 }
 
+tasks.withType(Test) {
+    systemProperties = System.properties as Map<String, ?>
+
+    testLogging {
+        // set options for log level LIFECYCLE
+        events "failed",
+                "passed",
+                "skipped",
+                "standard_out",
+                "standard_error"
+        exceptionFormat "full"
+        showExceptions true
+        showCauses true
+        showStackTraces true
+    }
+}
+
 task issue_tests(type: Test ) {
     useJUnitPlatform {
         includeTags 'issue'

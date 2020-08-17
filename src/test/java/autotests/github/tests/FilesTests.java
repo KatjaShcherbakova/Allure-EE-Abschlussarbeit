@@ -28,7 +28,6 @@ public class FilesTests extends TestBase {
     private final GithubWebSteps steps = new GithubWebSteps();
     private final String expectedFileText = "How GitHub secures open source software";
 
-
     @Test
     @DisplayName("Positive test: download the PDF file and search for an expected text in it")
     public void filePDFShouldContainExpectedText() throws IOException {
@@ -41,7 +40,7 @@ public class FilesTests extends TestBase {
             File downloadedFile =  $("[href='/downloads/How-GitHub-secures-open-source-software.pdf']").download();
             PDF downloadedFileText = new PDF(downloadedFile);
 
-            assertThat(downloadedFileText,PDF.containsText(expectedFileText));
+            steps.checkPdfFileContansExpectedText(downloadedFileText,expectedFileText);
         });
 
     }

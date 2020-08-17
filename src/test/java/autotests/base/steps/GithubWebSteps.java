@@ -1,5 +1,6 @@
 package autotests.base.steps;
 
+import com.codeborne.pdftest.PDF;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
@@ -10,6 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static autotests.helpers.Environment.baseUrl;
 import static io.qameta.allure.Allure.link;
 import static io.qameta.allure.Allure.parameter;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class GithubWebSteps {
 
@@ -105,6 +107,11 @@ public class GithubWebSteps {
         $("a.btn-primary",1).click();
         $("input[name='issue[title]']").setValue(issue_name);
         $("#new_issue").submit();
+    }
+
+    @Step("Check that downloaded PDF file contains expected text")
+    public void checkPdfFileContansExpectedText(PDF downloaded_file_text, String expected_text) {
+        assertThat(downloaded_file_text, PDF.containsText(expected_text));
     }
 
 }

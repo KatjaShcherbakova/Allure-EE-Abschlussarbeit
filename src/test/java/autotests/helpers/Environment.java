@@ -12,7 +12,6 @@ public class Environment {
             incorrectPasswordGithub = System.getProperty("incorrect_password","fdfsfsfse"),
             incorrectUsernameGithub = System.getProperty("incorrect_password","KatjTest"),
 
-
             remoteDriverUrl = System.getProperty("remote_driver_url","https://user1:1234@selenoid.autotests.cloud:4444/wd/hub/"),//https://user1:1234@selenoid.autotests.cloud:4444/wd/hub/
             videoStorageUrl = System.getProperty("video_storage_url","https://selenoid.autotests.cloud/video/");//https://selenoid.autotests.cloud/video/
 
