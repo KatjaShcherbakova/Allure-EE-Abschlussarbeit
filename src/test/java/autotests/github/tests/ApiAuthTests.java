@@ -23,7 +23,6 @@ import static org.hamcrest.Matchers.is;
 @Feature("Authorization")
 @Story("Authorization on Githab by the API")
 public class ApiAuthTests {
-
    // @formatter:off
    @Test
    @DisplayName("Authorization on Githab by the API using Username&Password and check the login in a response")  //  Password authentication to the API will be removed on November 13, 2020.

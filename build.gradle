@@ -82,6 +82,12 @@ task auth_tests(type: Test ) {
     }
 }
 
+task api_tests(type: Test ) {
+    useJUnitPlatform {
+        includeTags 'api'
+    }
+}
+
 task file_tests(type: Test ) {
     useJUnitPlatform {
         includeTags 'file'

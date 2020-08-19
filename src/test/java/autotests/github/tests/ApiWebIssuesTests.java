@@ -17,8 +17,7 @@ import static autotests.helpers.Environment.*;
 import static io.qameta.allure.Allure.parameter;
 import static io.qameta.allure.Allure.step;
 
-@Layer("api")
-@Layer("web")
+@Layer("api web")
 @Owner("shcherbakova")
 @Feature("ISSUE")
 @Story("Creation issue by the API")
