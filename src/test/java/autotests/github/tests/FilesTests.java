@@ -2,11 +2,14 @@ package autotests.github.tests;
 
 import autotests.TestBase;
 import autotests.base.steps.GithubWebSteps;
+import autotests.shcherbakova.allure.Layer;
 import com.codeborne.pdftest.PDF;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -18,11 +21,10 @@ import static io.qameta.allure.Allure.parameter;
 import static io.qameta.allure.Allure.step;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@Layer("web")
 @Owner("shcherbakova")
 @Feature("Work with files")
-@Tag("github")
-@Tag("file")
-@Tag("web")
+@Story("Download a file and check an expected text in it")
 public class FilesTests extends TestBase {
 
     private final GithubWebSteps steps = new GithubWebSteps();
@@ -30,6 +32,7 @@ public class FilesTests extends TestBase {
 
     @Test
     @DisplayName("Positive test: download the PDF file and search for an expected text in it")
+    @Tags({@Tag("github"), @Tag("file"), @Tag("web") })
     public void filePDFShouldContainExpectedText() throws IOException {
         parameter("EXPECTED TEXT: ",expectedFileText);
 

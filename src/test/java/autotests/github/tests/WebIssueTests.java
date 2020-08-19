@@ -2,10 +2,13 @@ package autotests.github.tests;
 
 import autotests.TestBase;
 import autotests.base.steps.GithubWebSteps;
+import autotests.shcherbakova.allure.Layer;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -15,17 +18,17 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.*;
 
+@Layer("web")
 @Owner("shcherbakova")
-@Feature("Work with issues by WEB")
-@Tag("github")
-@Tag("issue")
-@Tag("web")
+@Feature("ISSUE")
+@Story("Work with issues by WEB")
 public class WebIssueTests extends TestBase {
     private final GithubWebSteps steps = new GithubWebSteps();
 
 
     @Test
     @DisplayName("Positive test, user should be able to find issue by a specific number")
+    @Tags({@Tag("github"), @Tag("issue"), @Tag("web")})
     public void shouldFindIssueByNumber() {
 
         parameter("REPOSITIRY: ", repository);

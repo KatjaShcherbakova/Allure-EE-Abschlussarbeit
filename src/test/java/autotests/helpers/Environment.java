@@ -6,9 +6,9 @@ public class Environment {
             baseApiUrl = System.getProperty("base_api_url","https://api.github.com"),
             fileUrl = System.getProperty("page_with_file","https://resources.github.com/whitepapers/How-GitHub-secures-open-source-software/"),
             repository = System.getProperty("repository","KatjaTest/Test-repository"),
-            tokenGithub = System.getProperty("token", ""),
+            tokenGithub = System.getProperty("token", "84a3d2fc9d4032973064a02bdc13a16a01abcd70"),
             usernameGithub = System.getProperty("user_name","KatjaTest"),
-            passwordGithub = System.getProperty("password", ""),
+            passwordGithub = System.getProperty("password", "qwertyqaz1!"),
             incorrectPasswordGithub = System.getProperty("incorrect_password","fdfsfsfse"),
             incorrectUsernameGithub = System.getProperty("incorrect_password","KatjTest"),
 

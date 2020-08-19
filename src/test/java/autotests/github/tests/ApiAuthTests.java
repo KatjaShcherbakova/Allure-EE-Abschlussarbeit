@@ -1,11 +1,14 @@
 package autotests.github.tests;
 
 import autotests.TestBase;
+import autotests.shcherbakova.allure.Layer;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import io.qameta.allure.restassured.AllureRestAssured;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static autotests.helpers.Environment.*;
@@ -15,16 +18,16 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
+@Layer("api")
 @Owner("shcherbakova")
-@Feature("Authorization by API ")
-@Tag("github")
-@Tag("api")
-@Tag("auth")
+@Feature("Authorization")
+@Story("Authorization on Githab by the API")
 public class ApiAuthTests {
 
    // @formatter:off
-   @DisplayName("Authorization on Githab by the API using Username&Password and check the login in a response")  //  Password authentication to the API will be removed on November 13, 2020.
    @Test
+   @DisplayName("Authorization on Githab by the API using Username&Password and check the login in a response")  //  Password authentication to the API will be removed on November 13, 2020.
+   @Tags({@Tag("api"), @Tag("github"), @Tag("auth")})
    void authGithubByUsernamePassword () {
        String login =  given()
                 .filter(new AllureRestAssured())
@@ -42,8 +45,9 @@ public class ApiAuthTests {
     });
    }
 
-   @DisplayName("Authorization on Githab by the API using token and check the id in a response")
    @Test
+   @DisplayName("Authorization on Githab by the API using token and check the id in a response")
+   @Tags({@Tag("api"), @Tag("github"), @Tag("auth")})
    void authGithubByToken () {
       Integer id = given()
               .filter(new AllureRestAssured())

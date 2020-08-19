@@ -1,9 +1,13 @@
 package autotests.github.tests;
 
 import autotests.TestBase;
+import autotests.shcherbakova.allure.Layer;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -13,13 +17,15 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-@Feature("Listener")
-@Tag("issue")
-@Tag ("github")
+@Layer("web")
+@Owner("shcherbakova")
+@Feature("ISSUE")
+@Story("Displaying test steps in the report using the listener")
+@Tags({@Tag("issue"), @Tag ("github"), @Tag("web")})
 public class ListenerTest extends TestBase {
 
     @Test
-    @DisplayName("Issue test without steps but with Listener ")
+    @DisplayName("Simple issue test with the listener ")
     public void IssueTestWithListener() {
        open(baseUrl);
        $(".header-search-input").click();
