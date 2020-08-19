@@ -1,8 +1,8 @@
 package autotests.helpers;
 
+import autotests.drivers.CustomWebDriver;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import drivers.CustomWebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;

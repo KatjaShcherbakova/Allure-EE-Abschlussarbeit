@@ -1,4 +1,4 @@
-package drivers;
+package autotests.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
