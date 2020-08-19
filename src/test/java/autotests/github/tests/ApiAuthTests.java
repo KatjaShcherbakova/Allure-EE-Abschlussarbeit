@@ -21,12 +21,12 @@ import static org.hamcrest.Matchers.is;
 @Layer("api")
 @Owner("shcherbakova")
 @Feature("Authorization")
-@Story("Authorization on Githab by the API")
+@Story("Authorization by the API")
+@Tags({@Tag("api"), @Tag("github"), @Tag("auth")})
 public class ApiAuthTests {
    // @formatter:off
    @Test
    @DisplayName("Authorization on Githab by the API using Username&Password and check the login in a response")  //  Password authentication to the API will be removed on November 13, 2020.
-   @Tags({@Tag("api"), @Tag("github"), @Tag("auth")})
    void authGithubByUsernamePassword () {
        String login =  given()
                 .filter(new AllureRestAssured())
@@ -46,7 +46,6 @@ public class ApiAuthTests {
 
    @Test
    @DisplayName("Authorization on Githab by the API using token and check the id in a response")
-   @Tags({@Tag("api"), @Tag("github"), @Tag("auth")})
    void authGithubByToken () {
       Integer id = given()
               .filter(new AllureRestAssured())

@@ -22,16 +22,14 @@ import static io.qameta.allure.Allure.*;
 @Owner("shcherbakova")
 @Feature("ISSUE")
 @Story("Work with issues by WEB")
+@Tags({@Tag("github"), @Tag("issue"), @Tag("web")})
 public class WebIssueTests extends TestBase {
     private final GithubWebSteps steps = new GithubWebSteps();
 
-
     @Test
     @DisplayName("Positive test, user should be able to find issue by a specific number")
-    @Tags({@Tag("github"), @Tag("issue"), @Tag("web")})
     public void shouldFindIssueByNumber() {
-
-        parameter("REPOSITIRY: ", repository);
+        parameter("REPOSITORY: ", repository);
         parameter("ISSUE: ", correctIssueNumber);
         link("Github",String.format("%s/%s",baseUrl,repository));
 

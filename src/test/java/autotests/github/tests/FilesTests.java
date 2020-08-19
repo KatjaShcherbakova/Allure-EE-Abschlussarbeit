@@ -25,6 +25,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @Owner("shcherbakova")
 @Feature("Work with files")
 @Story("Download a file and check an expected text in it")
+@Tags({@Tag("github"), @Tag("file"), @Tag("web") })
 public class FilesTests extends TestBase {
 
     private final GithubWebSteps steps = new GithubWebSteps();
@@ -32,7 +33,6 @@ public class FilesTests extends TestBase {
 
     @Test
     @DisplayName("Positive test: download the PDF file and search for an expected text in it")
-    @Tags({@Tag("github"), @Tag("file"), @Tag("web") })
     public void filePDFShouldContainExpectedText() throws IOException {
         parameter("EXPECTED TEXT: ",expectedFileText);
 

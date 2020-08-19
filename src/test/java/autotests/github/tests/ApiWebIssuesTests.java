@@ -20,14 +20,14 @@ import static io.qameta.allure.Allure.step;
 @Layer("api web")
 @Owner("shcherbakova")
 @Feature("ISSUE")
-@Story("Creation issue by the API")
+@Story("Work with issues by the API")
+@Tags({@Tag("issue"), @Tag("github"), @Tag ("api"), @Tag("web")})
 public class ApiWebIssuesTests extends TestBase {
     private final GithubWebSteps webSteps = new GithubWebSteps();
     private final GithubApiSteps apiSteps = new GithubApiSteps();
 
     @Test
     @DisplayName("Positive test: The issue is created by API, the user must find it by NUMBER by Web")
-    @Tags({@Tag("issue"), @Tag("github"), @Tag ("api"), @Tag("web")})
     public void createIssueByApiAndCheckNumberByWeb() {
         final Issue createdIssue = apiSteps.createIssueWithTitle("test111111111");
 
@@ -40,7 +40,6 @@ public class ApiWebIssuesTests extends TestBase {
 
     @Test
     @DisplayName("Positive test: The issue is created by API, the user must find it by NAME by Web")
-    @Tags({@Tag("issue"), @Tag("github"), @Tag ("api"), @Tag("web")})
     public void createIssueByApiAndCheckNameByWeb() {
         final Issue createdIssue = apiSteps.createIssueWithTitle("test2222");
 

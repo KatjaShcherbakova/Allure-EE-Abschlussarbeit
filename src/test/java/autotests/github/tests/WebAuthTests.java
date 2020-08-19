@@ -17,12 +17,12 @@ import static autotests.helpers.Environment.*;
 @Owner("shcherbakova")
 @Feature("Authorization")
 @Story("Authorization by the WEB")
+@Tags({@Tag("auth"), @Tag("github"), @Tag("web")})
 public class WebAuthTests extends TestBase {
     private final GithubWebSteps steps = new GithubWebSteps();
 
     @Test
     @DisplayName("Positive test: Already registred user should be able to log in with CORRECT username/password")
-    @Tags({@Tag("auth"), @Tag("github"), @Tag("web")})
     public void shouldLoginWithCorrectUsernamePassword() {
         steps.openPage(baseUrl);
         steps.clickSignIn();
@@ -32,7 +32,6 @@ public class WebAuthTests extends TestBase {
 
     @Test
     @DisplayName("Negative test: User must NOT be able to log in with an INCORRECT password")
-    @Tags({@Tag("auth"), @Tag("github"), @Tag("web")})
     public void shouldNotLoginWithIncorrectPassword() {
         steps.openPage(baseUrl);
         steps.clickSignIn();
@@ -42,7 +41,6 @@ public class WebAuthTests extends TestBase {
 
     @Test
     @DisplayName("Negative test: User must NOT be able to log in with an INCORRECT username")
-    @Tags({@Tag("auth"), @Tag("github"), @Tag("web")})
     public void shouldNotLoginWithIncorrectUsername() {
         steps.openPage(baseUrl);
         steps.clickSignIn();
@@ -52,7 +50,6 @@ public class WebAuthTests extends TestBase {
 
     @Test
     @DisplayName("Negative test: User must NOT be able to log in with EMPTY username/password ")
-    @Tags({@Tag("auth"), @Tag("github"), @Tag("web")})
     public void shouldNotLoginWithEmptyUsernamePassword() {
         steps.openPage(baseUrl);
         steps.clickSignIn();
